@@ -1,0 +1,49 @@
+<div class="row h-75">
+    <div class="col-12 h-100">
+    <div class="row h-33 mh-33">
+        <div class="col-2">
+        <!-- Blank Space -->
+        </div>
+        <div class="col-2 mx-auto my-auto h-75" *ngFor="let playerIndex of [1, 2, 3, 4]">
+            <ng-container *ngTemplateOutlet="playerTemplate; context: { player: players[playerIndex] }"></ng-container>
+        </div>
+        <div class="col-2">
+        <!-- Blank Space -->
+        </div>
+    </div>
+
+    <div class="row h-33 mh-33">
+        <div class="col-2 mx-auto my-auto h-75">
+            <ng-container *ngTemplateOutlet="playerTemplate; context: { player:  players[0] }"></ng-container>
+        </div>
+        <div class="col-8 bg-success rounded-lg">
+            <table-space [tableCards]="tableCards"></table-space>
+        </div>
+        <div class="col-2 mx-auto my-auto h-75">
+            <ng-container *ngTemplateOutlet="playerTemplate; context: { player:  players[5] }"></ng-container>
+        </div>
+    </div>
+
+    <div class="row h-33 mh-33">
+        <div class="col-2">
+        <!-- Blank Space -->
+        </div>
+        <div class="col-2 mx-auto my-auto h-75" *ngFor="let playerIndex of [9, 8, 7, 6]">
+            <ng-container *ngTemplateOutlet="playerTemplate; context: { player: players[playerIndex] }"></ng-container>
+        </div>
+        <div class="col-2">
+        <!-- Blank Space -->
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="row h-25 bg-info">
+    <div class="col-12">
+    Information Here...
+    </div>
+</div>
+
+<ng-template #playerTemplate let-player="player">
+    <player [player]="player" *ngIf="player"></player>
+</ng-template>

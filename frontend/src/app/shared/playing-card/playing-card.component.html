@@ -1,0 +1,4 @@
+<img [src]="cardImageUrl" class="playing-card" [ngbTooltip]="cardPopover" [disableTooltip]="!enlarge || !showing" openDelay="300"/>
+<ng-template #cardPopover>
+    <img [src]="cardImageUrl" class="popover-card" />
+</ng-template>

@@ -1,0 +1,16 @@
+<div class="rounded-lg bg-light border border-dark p-1 h-100">
+    <ng-container *ngIf="player.playing">
+        <div class="h-75">
+            <player-hand [player]="player" (click)="player.showing = !player.showing"></player-hand>
+        </div>
+        <div class="h-25">
+            <strong class="pr-1">Player {{player.position}} - {{player.balance | currency}}</strong>
+            <p *ngIf="playerDealer">(D)</p>
+            <p *ngIf="playerSmallBlind">(S)</p>
+            <p *ngIf="playerBigBlind">(B)</p>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!player.playing">
+        <button class="btn btn-warning btn-block h-100" (click)="player.playing = true">Sit</button>
+    </ng-container>
+</div>

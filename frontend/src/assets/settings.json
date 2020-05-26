@@ -1,0 +1,4 @@
+{
+    "baseApiUrl": "http://localhost:3000",
+    "cardAssetBaseUrl": "/assets/cards"
+}

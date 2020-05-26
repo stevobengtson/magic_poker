@@ -1,0 +1,18 @@
+<div class="jumbotron jumbotron-fluid rounded-pill">
+    <div class="text-center">
+        <h1 class="display-4">Online Poker!</h1>
+        <p class="lead">Player poker online with your friends.</p>
+        <ng-container *ngIf="!loggedIn">
+            <hr class="my-4">
+            <p>You can log in or register here.</p>
+            <button class="btn btn-primary btn-lg" routerLink="/users/login">Log in</button>  
+            <button class="btn btn-secondary btn-lg" routerLink="/users/register">Register</button>
+        </ng-container>
+        <ng-container *ngIf="loggedIn">
+            <button class="btn btn-danger btn-lg" routerLink="/users/logout">Log out</button>  
+        </ng-container>
+    </div>
+</div>
+<div class="row" *ngIf="loggedIn">
+    <button class="btn btn-success btn-lg" routerLink="/table">Goto Table</button>  
+</div>
